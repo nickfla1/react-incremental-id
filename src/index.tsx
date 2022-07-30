@@ -32,7 +32,7 @@ const IncrementalProvider = ({ children, prefix, initialValue }: PropsWithChildr
 const useId = (): string => {
   const { next, prefix } = useContext(IncrementalContext);
 
-  return `${prefix}${next()}`;
+  return `${prefix ?? ""}${next()}`;
 }
 
 export { IncrementalProvider, useId };
