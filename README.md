@@ -1,5 +1,8 @@
 # react-incremental-id
 
+![example workflow](https://github.com/nickfla1/react-incremental-id/actions/workflows/main.yml/badge.svg)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/nickfla1/react-incrementa/issues)
+
 Create customizable incremental string IDs.
 
 ## Installation
