@@ -33,16 +33,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "use-incremental-id",
+  "name": "react-incremental-id",
   "author": "nickfla1",
-  "module": "dist/use-incremental-id.esm.js",
+  "module": "dist/react-incremental-id.esm.js",
   "size-limit": [
     {
-      "path": "dist/use-incremental-id.cjs.production.min.js",
+      "path": "dist/react-incremental-id.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/use-incremental-id.esm.js",
+      "path": "dist/react-incremental-id.esm.js",
       "limit": "10 KB"
     }
   ],
