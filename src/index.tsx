@@ -4,6 +4,7 @@ import {
   PropsWithChildren,
   useCallback,
   useContext,
+  useMemo,
   useRef,
 } from "react";
 
@@ -46,7 +47,8 @@ const IncrementalProvider = ({
 const useId = (): string => {
   const { next, prefix } = useContext(IncrementalContext);
 
-  return `${prefix ?? ""}${next()}`;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useMemo(() => `${prefix ?? ""}${next()}`, []);
 };
 
 export { IncrementalProvider, useId };
