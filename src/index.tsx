@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { createContext, PropsWithChildren, useCallback, useContext, useRef } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useContext,
+  useRef,
+} from 'react';
 
 interface Props {
   prefix?: string;
@@ -12,18 +18,26 @@ interface IContext {
 }
 
 const IncrementalContext = createContext<IContext>({
-  next: () => { throw new Error("Canno use 'next' outside of an 'IncrementalProvider'"); },
+  next: () => {
+    throw new Error("Canno use 'next' outside of an 'IncrementalProvider'");
+  },
 });
 
-const IncrementalProvider = ({ children, prefix, initialValue }: PropsWithChildren<Props>) => {
+const IncrementalProvider = ({
+  children,
+  prefix,
+  initialValue,
+}: PropsWithChildren<Props>) => {
   const counter = useRef<number>(initialValue ?? 0);
   const next = useCallback((): number => counter.current++, []);
 
   return (
-    <IncrementalContext.Provider value={{
-      next,
-      prefix,
-    }}>
+    <IncrementalContext.Provider
+      value={{
+        next,
+        prefix,
+      }}
+    >
       {children}
     </IncrementalContext.Provider>
   );
@@ -32,7 +46,7 @@ const IncrementalProvider = ({ children, prefix, initialValue }: PropsWithChildr
 const useId = (): string => {
   const { next, prefix } = useContext(IncrementalContext);
 
-  return `${prefix ?? ""}${next()}`;
-}
+  return `${prefix ?? ''}${next()}`;
+};
 
 export { IncrementalProvider, useId };
