@@ -8,6 +8,5 @@ test
 
 .gitignore
 .eslintrc.js
-README
 tsdx.config.js
 yarn.lock
