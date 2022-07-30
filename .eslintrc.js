@@ -1,13 +1,22 @@
 module.exports = {
   extends: [
-    'react-app',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
+    "react-app",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
   ],
-  ignorePatterns: ['dist'],
+  ignorePatterns: ["dist"],
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
+  },
+  rules: {
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      {
+        allowTemplateLiterals: true,
+      },
+    ],
   },
 };

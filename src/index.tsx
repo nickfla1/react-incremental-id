@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   createContext,
   PropsWithChildren,
   useCallback,
   useContext,
   useRef,
-} from 'react';
+} from "react";
 
 interface Props {
   prefix?: string;
@@ -19,7 +19,7 @@ interface IContext {
 
 const IncrementalContext = createContext<IContext>({
   next: () => {
-    throw new Error("Canno use 'next' outside of an 'IncrementalProvider'");
+    throw new Error("Cannot use 'next' outside of an 'IncrementalProvider'");
   },
 });
 
@@ -46,7 +46,7 @@ const IncrementalProvider = ({
 const useId = (): string => {
   const { next, prefix } = useContext(IncrementalContext);
 
-  return `${prefix ?? ''}${next()}`;
+  return `${prefix ?? ""}${next()}`;
 };
 
 export { IncrementalProvider, useId };
